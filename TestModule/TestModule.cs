@@ -13,8 +13,8 @@ public class TestModule : OSMLSModule
 {
 
 
-        static Timer timer;
-        private readonly int _leftX = -18000000;
+    static Timer timer;
+    private readonly int _leftX = -18000000;
     private readonly int _rightX = -9700000;
     private readonly int _downY = -10000000;
     private readonly int _upY = -4200000;
@@ -23,10 +23,7 @@ public class TestModule : OSMLSModule
     bool endResearch = true;
     Random rnd = new Random();
 
-        public void Init()
-        {
-            timer = new Timer(newObj, null, 0, 5000);
-        }
+    
 
         protected override void Initialize()
     {
@@ -49,15 +46,21 @@ public class TestModule : OSMLSModule
 
         
     
-public void newObj(object obj)
-{
+    public void newObj(object obj)
+    {
     MapObjects.Add(new ObjResearch(new Coordinate(rnd.Next(_leftX, _rightX), rnd.Next(_downY, _upY)), rnd.Next(2000, 20000)));
           
-}
+    }
 
-  
-public async Task MethodWithDelayAsync(int milliseconds)
-{
+    public void Init()
+    {
+    timer = new Timer(newObj, null, 0, 5000);
+    }
+
+
+
+        public async Task MethodWithDelayAsync(int milliseconds)
+        {
     await Task.Delay(milliseconds);
 
     endResearch = true;
