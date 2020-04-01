@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="OSMLSGlobalLibrary">
+      <HintPath>..\..\..\osmlifesimulation\OSMLS\bin\Debug\netcoreapp2.1\OSMLSGlobalLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NetTopologySuite" Version="2.0.0" />
+    <PackageReference Include="NetTopologySuite.Features" Version="2.0.0" />
+  </ItemGroup>
+</Project>
